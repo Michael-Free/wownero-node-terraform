@@ -7,6 +7,7 @@ WOWNERO_CONFIG_FILE=wownero.conf
 check_root() {
    if [[ $EUID -ne 0 ]];
       then
+        echo "ERROR-01 - NO ROOT ACCESS!"
         return 1
       else
         return 0
@@ -20,10 +21,9 @@ check_os() {
 check_config() {
    if curl -J -L $WOWNERO_DEB_URL --output $WOWNERO_DEB_FILE;
    then
-      echo "success!"
       return 0
    else
-      echo "bad downloaD"
+      echo "ERROR-02 - DOWNLOAD FAILED OF WOWNERO DEB FILE"
       return 1
    fi
 }
@@ -33,7 +33,6 @@ check_vars() {
    then
       if [ -f "$WOWNERO_SVC_FILE" ];
       then
-         echo "it works"
          return 0
       else
          echo "ERROR-03 FILE ERROR - No $WOWNERO_SVC_FILE Found"
@@ -51,7 +50,6 @@ install_req(){
       # install tor file!
       if apt install tor -y;
       then
-         echo "itworks"
          return 0
       else
          echo "ERROR-04 - INSTALL REQUIREMENTS - TOR PACKAGE INSTALL FAILED"
@@ -133,7 +131,6 @@ then
                # create wownero service
                   if install_svc;
                   then
-                     echo "wegood"
                      exit 0
                   else
                     exit 1
@@ -145,18 +142,14 @@ then
                exit 1
             fi
          else
-            echo "ERROR-03 - CONFIG FILE"
             exit 1
          fi
       else
-         echo "ERROR-02 NO CONFIG FILE!"
          exit 1
       fi
    else
-      echo "ERROR-01 WRONG OS!"
       exit 1
    fi
 else
-   echo "ERROR-00 NOT ROOT!"
    exit 1
 fi
