@@ -82,6 +82,7 @@ install_deb() {
 install_svc() {
    if cat "$WOWNERO_SVC_FILE" > "/etc/systemd/system/$WOWNERO_SVC_FILE";
    then
+      mkdir ~/wownero
       # reload systemd services
       if systemctl daemon-reload;
       then
