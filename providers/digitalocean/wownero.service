@@ -4,7 +4,7 @@ Description=Wownero_Public_Node
 [Service]
 User=root
 WorkingDirectory=/root/wownero
-ExecStart=/usr/bin/wownerod --config-file=/root/wownero.conf --non-interactive
+ExecStart=/usr/bin/wownerod --config-file=/root/wownero/wownero.conf --non-interactive
 Restart=always
 
 [Install]

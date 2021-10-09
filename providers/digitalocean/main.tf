@@ -37,7 +37,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
       "dpkg -i /tmp/wownero.deb",
       "wait",
       "cat /tmp/wownero.service > /etc/systemd/system/wownero.service",
-      "cat /tmp/wownero.conf > /root/wownero.conf",
+      "cat /tmp/wownero.conf > /root/wownero/wownero.conf",
       "systemctl daemon-reload && systemctl start wownero.service && systemctl enable wownero.service",
     ]
   }
