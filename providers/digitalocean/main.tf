@@ -32,7 +32,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/install-wownero.sh",
-      "cat wownero.conf"
+      "cat wownero.conf",
       "/tmp/install-wownero.sh",
     ]
   }
