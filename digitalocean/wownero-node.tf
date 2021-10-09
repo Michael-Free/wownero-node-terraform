@@ -12,6 +12,6 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   region   = "nyc3"
   ssh_keys = ["${digitalocean_ssh_key.terraform.fingerprint}"]
   provisioner "remote-exec" {
-    command = "echo HELLO"
+    inline = [ "echo hello" ]
   }
 }
