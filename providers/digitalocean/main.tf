@@ -33,6 +33,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     inline = [
       "chmod +x /tmp/install-wownero.sh",
       "cat /tmp/wownero.conf",
+      "cat /tmp/wownero.service",
       "/tmp/install-wownero.sh",
     ]
   }
