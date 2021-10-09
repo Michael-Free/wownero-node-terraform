@@ -13,7 +13,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   ssh_keys = ["${digitalocean_ssh_key.terraform.fingerprint}"]
   connection {
     type = "ssh"
-    host = digitalocean_droplet.public_ip
+    host = self.ipv4_address
     user = "root"
     private_key = "${file("~/.ssh/id_rsa.pub")}"
   }
