@@ -23,7 +23,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
       "cd ~/wownero-node-terraform",
       "chmod +x install-remote/install-wownero.sh",
       "cd install-remote",
-      "sudo ./install-wownero.sh"
+      "sudo ./install-wownero.sh",
     ]
   }
 }
