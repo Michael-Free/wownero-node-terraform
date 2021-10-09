@@ -17,13 +17,14 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     user = "root"
     private_key = "${file("~/.ssh/id_rsa")}"
   }
+  provisioner "file" {
+    source = "../../install-wownero.sh"
+    destination = "/tmp/install-wownero.sh"
+  }
   provisioner "remote-exec" {
     inline = [
-      "git clone https://github.com/Michael-Free/wownero-node-terraform.git ~/",
-      "cd ~/wownero-node-terraform",
-      "chmod +x install-remote/install-wownero.sh",
-      "cd install-remote",
-      "sudo ./install-wownero.sh",
+      "chmod +x /tmp/install-wownero.sh",
+      "sudo ./tmp/install-wownero.sh",
     ]
   }
 }
