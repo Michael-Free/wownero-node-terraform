@@ -18,13 +18,21 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     private_key = "${file("~/.ssh/id_rsa")}"
   }
   provisioner "file" {
-    source = "../../install-wownero.sh"
+    source = "install-wownero.sh"
     destination = "/tmp/install-wownero.sh"
+  }
+  provisioner "file" {
+    source = "wownero.conf"
+    destination = "/tmp/wownero.conf"
+  }
+  provisioner "file" {
+    source = "wownero.service"
+    destination = "/tmp/wownero.service"
   }
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/install-wownero.sh",
-      "sudo ./tmp/install-wownero.sh",
+      "/tmp/install-wownero.sh",
     ]
   }
 }
