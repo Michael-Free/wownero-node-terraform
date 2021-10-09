@@ -33,7 +33,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     inline = [
       "chmod +x /tmp/install-wownero.sh",
       "mkdir /root/wownero/",
-      "apt update && apt install apt-transport-https",
+      "apt update && apt install apt-transport-https -y",
       #"wget -q -O - https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | apt-key add -",
       #"echo 'deb https://deb.torproject.org/torproject.org $(lsb_release -cs) main' | sudo tee -a /etc/apt/sources.list",
       "apt update && apt install tor -y",
