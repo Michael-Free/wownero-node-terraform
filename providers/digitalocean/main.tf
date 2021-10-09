@@ -32,9 +32,11 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/install-wownero.sh",
-      "cat /tmp/wownero.conf",
-      "cat /tmp/wownero.service",
-      "/tmp/install-wownero.sh",
+      "mkdir /root/wownero/",
+      "curl -J -L https://git.wownero.com/attachments/e9e6fa73-9e3a-4391-af04-64fba8cc6d9e --output /tmp/wownero.deb",
+      "cat /tmp/wownero.service > /etc/systemd/system/wownero.service",
+      "cat /tmp/wownero.conf > /root/wownero.conf",
+      #"/tmp/install-wownero.sh",
     ]
   }
 }
