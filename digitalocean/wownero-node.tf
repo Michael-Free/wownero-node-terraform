@@ -15,7 +15,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     type = "ssh"
     host = self.ipv4_address
     user = "root"
-    private_key = "${file("~/.ssh/id_rsa.pub")}"
+    private_key = "${file("~/.ssh/id_rsa")}"
   }
   provisioner "remote-exec" {
     inline = [ "echo hello" ]
