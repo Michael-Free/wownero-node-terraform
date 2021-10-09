@@ -8,6 +8,6 @@ Basic terraform install script for a wownero node
 
 ~~- `install-wownero.sh` should only be for Ubuntu Server 20.04 LTS at the moment~~
 
-- Creating a successful terraform provider configuration for DigitalOcean
+~~- Creating a successful terraform provider configuration for DigitalOcean~~
 - Creating a terraform plan that installs `install-wownero.sh` and sucessully starts a wownero node
 - Creating a terraform plan that installs a wownero node service completely with terraform and no bash scripts.
