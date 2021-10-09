@@ -1,4 +1,4 @@
-terraform {
+  GNU nano 4.8                                          provider.tf                                                     terraform {
   required_providers {
     digitalocean = {
       source = "digitalocean/digitalocean"
@@ -14,6 +14,7 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-data "digitalocean_ssh_key" "terraform" {
-  name = "terraform"
-}
+#data "digitalocean_ssh_key" "terraform" {
+#  name = "terraform"
+#}
+
