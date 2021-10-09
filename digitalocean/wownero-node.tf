@@ -13,6 +13,31 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   ssh_keys = ["${digitalocean_ssh_key.terraform.fingerprint}"]
 }
 
+connection {
+  type = "ssh"
+  user = "root"
+  private_key = "${file("~/.ssh/id_rsa")}"
+}
+
+provisioner "remote-exec" {
+  inline = [
+    "export PATH=$PATH:/usr/bin"
+  ]
+}
+
+#  provisioner "remote-exec" {
+#    inline = [
+#      "export PATH=@$PATH:/usr/bin",
+#      "pwd"
+#    ]
+#  }
+#  connection {
+#    type = "ssh"
+#    user = "root"
+#    private_key="${file("~/.ssh/id_rsa)}"
+#  }
+#}
+
 #provisioner "remote-exec" {
 #  inline = [
 #    # declare the bash shell to be used
