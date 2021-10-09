@@ -11,6 +11,12 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
   size     = "s-1vcpu-1gb"
   region   = "nyc3"
   ssh_keys = ["${digitalocean_ssh_key.terraform.fingerprint}"]
+  connection {
+    type = "ssh"
+    host = digitalocean_droplet.public_ip
+    user = "root"
+    private_key = "${file("~/.ssh/id_rsa.pub")}"
+  }
   provisioner "remote-exec" {
     inline = [ "echo hello" ]
   }
