@@ -4,9 +4,9 @@ resource "digitalocean_droplet" "Wownero-Node" {
   region = "nyc3" #config to your liking
   size = "s-1vcpu-1gb" # config to your liking
   private_networking = true
-  ssh_keys = [
-    data.digitalocean_ssh_key.terraform.id
-  ]
+#  ssh_keys = [
+#    data.digitalocean_ssh_key.terraform.id
+#  ]
 
   connection {
     host = self.ipv4_address
