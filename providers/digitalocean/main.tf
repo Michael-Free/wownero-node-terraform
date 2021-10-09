@@ -25,13 +25,8 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
     source = "wownero.service"
     destination = "/tmp/wownero.service"
   }
-  provisioner "file" {
-    source = "install-wownero.sh"
-    destination = "/tmp/install-wownero.sh"
-  }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/install-wownero.sh",
       "mkdir /root/wownero/",
       "apt update && apt install apt-transport-https -y",
       "wait",
@@ -44,9 +39,6 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
       "cat /tmp/wownero.service > /etc/systemd/system/wownero.service",
       "cat /tmp/wownero.conf > /root/wownero.conf",
       "systemctl daemon-reload && systemctl start wownero.service && systemctl enable wownero.service",
-      #"systemctl start wownero.service",
-      #"systemctl enable wownero.service",
-      #"/tmp/install-wownero.sh",
     ]
   }
 }
