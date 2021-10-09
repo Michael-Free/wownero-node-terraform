@@ -34,7 +34,7 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
       "chmod +x /tmp/install-wownero.sh",
       "mkdir /root/wownero/",
       "apt update",
-      "apt install tor",
+      "apt install tor -y",
       "curl -J -L https://git.wownero.com/attachments/e9e6fa73-9e3a-4391-af04-64fba8cc6d9e --output /tmp/wownero.deb",
       "dpkg -i /tmp/wownero.deb",
       "cat /tmp/wownero.service > /etc/systemd/system/wownero.service",
