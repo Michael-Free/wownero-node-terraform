@@ -16,14 +16,14 @@ resource "digitalocean_droplet" "Wownero-Node" {
     timeout = "2m"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      # declare the bash shell to be used
-      "export PATH=$PATH:/usr/bin",
-      # clone wownero-node-terraform repo using a bash command cause it's sloppy and fast. will update later
-      "sudo git clone https://github.com/Michael-Free/wownero-node-terraform.git /root/wownero-node-terraform",
-      "sudo chmod +x /root/wownero-node-terraform/install-remote/install-wownero.sh",
-      "sudo ./install-wownero.sh"
-    ]
-  }
+#  provisioner "remote-exec" {
+#    inline = [
+#      # declare the bash shell to be used
+#      "export PATH=$PATH:/usr/bin",
+#      # clone wownero-node-terraform repo using a bash command cause it's sloppy and fast. will update later
+#      "sudo git clone https://github.com/Michael-Free/wownero-node-terraform.git /root/wownero-node-terraform",
+#      "sudo chmod +x /root/wownero-node-terraform/install-remote/install-wownero.sh",
+#      "sudo ./install-wownero.sh"
+#    ]
+#  }
 }
