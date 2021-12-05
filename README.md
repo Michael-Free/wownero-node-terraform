@@ -25,12 +25,9 @@ Chocolatey is a package manager for Windows that builds on top of existing Windo
     Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
 
-### Install Terraform
+#### Install Terraform
 
+choco install terraform
 
-# This is still a work in progress
-- setup and configuration of azure provider configuration for azure
-- use local ssh key instead of new key for new azure vm
-- use basic azure configturation
-- create vars.auto.tfvars for azure and implement them in to azure configuration
-- 
+## Configuring Terraform files
+
