@@ -1,17 +1,13 @@
 # wownero-node-terraform
-Basic terraform install script for a wownero node
+As it stands right now, I have a basic Terraform script for anyone to spin up a Wownero Node on Digital Ocean. It requires some information for you to input into a file first, before deploying it and you will find this out when following though this documentation.
 
-#WIP
+## Installing Terraform
 
-# Milestones
-~~- Simple, unsophisticated bash script `install-wownero.sh` to install wownero daemon, create a service for wownero, apply a configuration file, and exit with a successful return code. this script will run directly on the remote host, after being cloned from this repo's git url.~~
+### Installing on Linux-based Systems
 
-~~- `install-wownero.sh` should only be for Ubuntu Server 20.04 LTS at the moment~~
+### Installing on Windows-based Systems
 
-~~- Creating a successful terraform provider configuration for DigitalOcean~~
-~~- Creating a terraform plan that installs `install-wownero.sh` and sucessully starts a wownero node on digital ocean~~
-~~- Creating a terraform plan that installs a wownero node service completely with terraform and no bash scripts.~~
-
+# This is still a work in progress
 - setup and configuration of azure provider configuration for azure
 - use local ssh key instead of new key for new azure vm
 - use basic azure configturation
