@@ -27,8 +27,9 @@ Chocolatey is a package manager for Windows that builds on top of existing Windo
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
 
 #### Install Terraform
+Now that we have installed chocolatey - we can now install terraform which is a simple command to run in PowerShell.  Please make sure you run this as Administator and not as a regular user of the system before runing this!
 
-choco install terraform
+`choco install terraform`
 
 ## Configuring Terraform files
 
