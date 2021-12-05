@@ -10,11 +10,11 @@ Terraform is an infrastructure as code (IaC) tool that allows you to build, chan
 
 ### Installing on Windows-based Systems
 
-### Install Chocolatey
+#### Install Chocolatey
 Chocolatey is a package manager for Windows that builds on top of existing Windows technologies, using NuGet for packaging. A package manager, for those not familiar, is a way to get software onto your machine without much work on your part. It’s the Windows equivalent of yum or apt-get. Chocolatey downloads applications from their official distribution point and then installs, upgrades, uninstalls and configures them silently on your machine, including dependencies, per the instructions in the package.
 
   Source: https://puppet.com/blog/chocolatey-what-it/
-#### Steps to Install chocolatey/choco on Windows 10
+##### Steps to Install chocolatey/choco on Windows 10
     Click Start and type “powershell“
     Right-click Windows Powershell and choose “Run as Administrator“
     Paste the following command into Powershell and press enter.
@@ -25,7 +25,7 @@ Chocolatey is a package manager for Windows that builds on top of existing Windo
     Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
 
-#### Install Terraform
+### Install Terraform
 
 
 # This is still a work in progress
