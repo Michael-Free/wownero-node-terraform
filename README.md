@@ -16,16 +16,15 @@ Chocolatey is a package manager for Windows that builds on top of existing Windo
 
   Source: https://puppet.com/blog/chocolatey-what-it/
 ##### Steps to Install chocolatey/choco on Windows 10
-    Click Start and type “powershell“
-    Right-click Windows Powershell and choose “Run as Administrator“
-    Paste the following command into Powershell and press enter.
-      Set-ExecutionPolicy Bypass -Scope Process -Force; `
-      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    Answer Yes when prompted
-    Close and reopen an elevated PowerShell window to start using choco
-    Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
+The easiest way to install Terraform on Windows 7/10/11 is through using the Chocolatey package manager. Here we will go through the install process of installing Chocolatey and then we will move on to installing Terraform on your local system.
+1. Click Start and type “powershell“
+2. Right-click Windows Powershell and choose “Run as Administrator“
+3. Paste the following command into Powershell and press enter. Set-ExecutionPolicy Bypass -Scope Process -Force; `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+4. Answer Yes when prompted
+5. Close and reopen an elevated PowerShell window to start using choco
+6. Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
-
+  
 #### Install Terraform
 Now that we have installed chocolatey - we can now install terraform which is a simple command to run in PowerShell.  Please make sure you run this as Administator and not as a regular user of the system before runing this!
 
