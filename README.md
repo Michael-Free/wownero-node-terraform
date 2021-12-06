@@ -140,8 +140,20 @@ This command performs several different initialization steps in order to prepare
 
 This command is always safe to run multiple times, to bring the working directory up to date with changes in the configuration. Though subsequent runs may give errors, this command will never delete your existing configuration or state.
 
-source: https://www.terraform.io/docs/cli/commands/init.html
+Source: https://www.terraform.io/docs/cli/commands/init.html
 
+The next thing we want to do is validate our Terraform setup to make sure this will run as expected:
+
+```
+terraform validate
+```
+The terraform validate command validates the configuration files in a directory, referring only to the configuration and not accessing any remote services such as remote state, provider APIs, etc.
+
+Validate runs checks that verify whether a configuration is syntactically valid and internally consistent, regardless of any provided variables or existing state. It is thus primarily useful for general verification of reusable modules, including correctness of attribute names and value types.
+
+It is safe to run this command automatically, for example as a post-save check in a text editor or as a test step for a re-usable module in a CI system.
+
+Source: https://www.terraform.io/docs/cli/commands/validate.html
 
 
 Perform terraform validate to ensure setup is valid
