@@ -98,6 +98,13 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
 #### Name Options
 
 #### Size Options
+There are different sizes of VMs you can start with.  For the cheapest plan, and what seems to work the best for this scenario (albeit slower) - This can be modified if you'd like.
+
+```
+  size     = "s-1vcpu-1gb"
+```
+
+The way the coding works on this is that `s-` stands for shared. This is used for 1 to 8 vCPUs. So this could change the next section of the input.  `s-1vcpu`, `s-2vcpu`, `s-3vcpu`, etc all work for this. This also affects the last part of this statement where it works it works up to 16gb of RAM. Beyond this, the first part of this will change to `d-` for dedicated cpu/ram/storage. For more inforamtion please refer to Digital Ocean's plans and pricing listed here: https://docs.digitalocean.com/products/droplets/
 
 #### Region Options
 The current setup in this repo sets this as NYC3 as seen below:
