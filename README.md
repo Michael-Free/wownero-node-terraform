@@ -131,7 +131,18 @@ BLR1: Bangalore, India
 ```
 
 ## Deploying with Terraform
-Perform terraform init
+Now that we have everything configured in our `auto.vars.tfvars` and `main.tf` files, we'll finally be able to deploy terraform to the Digital Ocean cloud!  Simply fire up a terminal of your choice.  Change directory to where we've cloned under the providers folder (`wownero-node-terraform/providers/DigitalOcean/`) and perform this command:
+
+```
+terraform init
+```
+This command performs several different initialization steps in order to prepare the current working directory for use with Terraform. More details on these are in the sections below, but in most cases it is not necessary to worry about these individual steps.
+
+This command is always safe to run multiple times, to bring the working directory up to date with changes in the configuration. Though subsequent runs may give errors, this command will never delete your existing configuration or state.
+
+source: https://www.terraform.io/docs/cli/commands/init.html
+
+
 
 Perform terraform validate to ensure setup is valid
 
