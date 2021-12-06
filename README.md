@@ -78,8 +78,28 @@ The other variable is `pvt_key`.  This is the ssh key that will be used on the v
 
 After this is done, save the file and exit out of your text editor of choice.
 
-### Modidfy main.tf File
+### Modify main.tf File
 Modify the main.tf with the appropriate region, hostname, etc that you want for the Node.
+
+```
+resource "digitalocean_droplet" "Wownero-Node-Droplet" {
+  name     = "Wownero-Node-Droplet"
+  image    = "ubuntu-20-04-x64"
+  size     = "s-1vcpu-1gb"
+  region   = "nyc3"
+  ssh_keys = ["${digitalocean_ssh_key.terraform.fingerprint}"]
+  connection {
+    type = "ssh"
+    host = self.ipv4_address
+    user = "root"
+    private_key = "${file("~/.ssh/id_rsa")}"
+  }
+```
+#### Name Options
+
+#### Size Options
+
+#### Region Options
 
 ## Deploying with Terraform
 Perform terraform init
