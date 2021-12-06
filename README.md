@@ -33,6 +33,7 @@ If you want to deploy a Wownero Node using Terraform using these instructions - 
 Chocolatey is a package manager for Windows that builds on top of existing Windows technologies, using NuGet for packaging. A package manager, for those not familiar, is a way to get software onto your machine without much work on your part. It’s the Windows equivalent of yum or apt-get. Chocolatey downloads applications from their official distribution point and then installs, upgrades, uninstalls and configures them silently on your machine, including dependencies, per the instructions in the package.
 
   Source: https://puppet.com/blog/chocolatey-what-it/
+  
 ##### Steps to Install chocolatey/choco on Windows 10
 The easiest way to install Terraform on Windows 7/10/11 is through using the Chocolatey package manager. Here we will go through the install process of installing Chocolatey and then we will move on to installing Terraform on your local system.
 1. Click Start and type “powershell“
@@ -53,10 +54,11 @@ Now that we have installed chocolatey - we can now install terraform which is a 
 
 First thing we want to do is navigate to the `/providers/DigitalOcean` directory and we will want to modify the `vars.auto.tfvars` file.  There are only 2 variables that we will want to modify here. 
 
-``
+```
 do_token = "$DIGITALOCEAN_TOKEN"
+
 pvt_key = "$SSHKEY_LOCATION"
-``
+```
 We will want to find the Digital Ocean Personal Access Token and input it into the `do_token` space.  If you require any assistance in creating or finding this file - please follow along here: https://docs.digitalocean.com/reference/api/create-personal-access-token/. This token is used for provisioning resources in Digital Ocean's cloud.
 
 The other variable is `pvt_key`.  This is the ssh key that will be used on the vm to access the terminal of it. This will be on your local machine. If you don't have one setup - you can create one and following with the instructions here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.
