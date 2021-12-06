@@ -170,4 +170,17 @@ The plan command alone will not actually carry out the proposed changes, and so 
 
 If Terraform detects that no changes are needed to resource instances or to root module output values, terraform plan will report that no actions need to be taken.
 
-Perform terraform apply to spin up the node in the digital ocean
+Source: https://www.terraform.io/docs/cli/commands/plan.html
+
+Now that we have initialized terraform, validated it, and planned the deployment - It's time to  apply the plan and deploy it directly to the cloud!
+
+```
+terraform apply
+```
+The terraform apply command executes the actions proposed in a Terraform plan.
+
+The most straightforward way to use terraform apply is to run it without any arguments at all, in which case it will automatically create a new execution plan (as if you had run terraform plan) and then prompt you to approve that plan, before taking the indicated actions.
+
+Another way to use terraform apply is to pass it the filename of a saved plan file you created earlier with terraform plan -out=..., in which case Terraform will apply the changes in the plan without any confirmation prompt. This two-step workflow is primarily intended for when running Terraform in automation.
+
+Source: https://www.terraform.io/docs/cli/commands/apply.html
