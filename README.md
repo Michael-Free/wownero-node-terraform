@@ -100,6 +100,23 @@ resource "digitalocean_droplet" "Wownero-Node-Droplet" {
 #### Size Options
 
 #### Region Options
+The current setup in this repo sets this as NYC3 as seen below:
+```
+  region   = "nyc3"
+```
+
+But here is a full list of options you can use for regions around the world to setup.  Simply change NYC3 to whatever region you like!
+
+```
+NYC1, NYC2, NYC3: New York City, United States
+AMS2, AMS3: Amsterdam, the Netherlands
+SFO1, SFO2: San Francisco, United States
+SGP1: Singapore
+LON1: London, United Kingdom
+FRA1: Frankfurt, Germany
+TOR1: Toronto, Canada
+BLR1: Bangalore, India
+```
 
 ## Deploying with Terraform
 Perform terraform init
