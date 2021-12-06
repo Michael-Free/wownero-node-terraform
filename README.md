@@ -21,8 +21,8 @@ sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.rel
 
 The above command line uses the following sub-shell commands:
 
-dpkg --print-architecture to determine your system's primary APT architecture/ABI, such as amd64.
-lsb_release -cs to find the distribution release codename for your current system, such as buster, groovy, or sid.
+`dpkg --print-architecture` to determine your system's primary APT architecture/ABI, such as amd64.
+`lsb_release -cs` to find the distribution release codename for your current system, such as buster, groovy, or sid.
 apt-add-repository usually automatically runs apt update as part of its work in order to fetch the new package indices, but if it does not then you will need to so manually before the packages will be available.
 
 To install Terraform from the new repository:
