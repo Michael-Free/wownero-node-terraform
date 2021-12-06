@@ -52,20 +52,29 @@ Now that we have installed chocolatey - we can now install terraform which is a 
 
 ## Configuring Terraform files
 
-First thing we want to do is navigate to the `/providers/DigitalOcean` directory and we will want to modify the `vars.auto.tfvars` file.  There are only 2 variables that we will want to modify here. 
+### Clone this Repo
+First thing we want to do now is clone this repo: `git clone https://github.com/Michael-Free/wownero-node-terraform.git`
+
+### Modify vars.auto.tfvars File
+The next thing we want to do is navigate to the `/providers/DigitalOcean` directory in the repo we just clone. We will want to modify the `vars.auto.tfvars` file.  There are only 2 variables that we will want to modify here:
 
 ```
 do_token = "$DIGITALOCEAN_TOKEN"
-
 pvt_key = "$SSHKEY_LOCATION"
 ```
-We will want to find the Digital Ocean Personal Access Token and input it into the `do_token` space.  If you require any assistance in creating or finding this file - please follow along here: https://docs.digitalocean.com/reference/api/create-personal-access-token/. This token is used for provisioning resources in Digital Ocean's cloud.
+
+We will want to find the Digital Ocean Personal Access Token and input it into the `do_token` space.  If you require any assistance in creating or finding this file - please follow along here: https://docs.digitalocean.com/reference/api/create-personal-access-token/. 
+
+This token is used for provisioning resources in Digital Ocean's cloud.
 
 The other variable is `pvt_key`.  This is the ssh key that will be used on the vm to access the terminal of it. This will be on your local machine. If you don't have one setup - you can create one and following with the instructions here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.
 
+After this is done, save the file and exit out of your text editor of choice.
 
+### Modidfy main.tf File
 Modify the main.tf with the appropriate region, hostname, etc that you want for the Node.
 
+## Deploying with Terraform
 Perform terraform init
 
 Perform terraform validate to ensure setup is valid
