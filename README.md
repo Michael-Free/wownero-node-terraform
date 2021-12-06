@@ -56,7 +56,9 @@ The easiest way to install Terraform on Windows 7/10/11 is through using the Cho
 ##### Install Terraform
 Now that we have installed chocolatey - we can now install terraform which is a simple command to run in PowerShell.  Please make sure you run this as Administator and not as a regular user of the system before runing this!
 
-`choco install terraform`
+```
+choco install terraform
+```
 
 ## Configuring Terraform files
 
