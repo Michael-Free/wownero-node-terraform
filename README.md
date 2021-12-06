@@ -27,7 +27,9 @@ apt-add-repository usually automatically runs apt update as part of its work in 
 
 To install Terraform from the new repository:
 
-`sudo apt install terraform`
+```
+sudo apt install terraform
+```
 
 Source: https://www.terraform.io/docs/cli/install/apt.html
 
@@ -47,9 +49,9 @@ The easiest way to install Terraform on Windows 7/10/11 is through using the Cho
   ```
   Set-ExecutionPolicy Bypass -Scope Process -Force; `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
   ```
-5. Answer Yes when prompted
-6. Close and reopen an elevated PowerShell window to start using choco
-7. Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
+4. Answer Yes when prompted
+5. Close and reopen an elevated PowerShell window to start using choco
+6. Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
 
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
   
