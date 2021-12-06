@@ -155,9 +155,19 @@ It is safe to run this command automatically, for example as a post-save check i
 
 Source: https://www.terraform.io/docs/cli/commands/validate.html
 
+Once we have validated, we want to perform a plan command.  This will help us go through each step of the process to make sure when we execute the terraform script, it will function as expected:
 
-Perform terraform validate to ensure setup is valid
+```
+terraform plan
+```
+The terraform plan command creates an execution plan. By default, creating a plan consists of:
 
-Perform terraform plan to get an idea of what will happen
+ - Reading the current state of any already-existing remote objects to make sure that the Terraform state is up-to-date.
+ - Comparing the current configuration to the prior state and noting any differences.
+ - Proposing a set of change actions that should, if applied, make the remote objects match the configuration.
+
+The plan command alone will not actually carry out the proposed changes, and so you can use this command to check whether the proposed changes match what you expected before you apply the changes or share your changes with your team for broader review.
+
+If Terraform detects that no changes are needed to resource instances or to root module output values, terraform plan will report that no actions need to be taken.
 
 Perform terraform apply to spin up the node in the digital ocean
