@@ -9,10 +9,10 @@ Terraform is an infrastructure as code (IaC) tool that allows you to build, chan
 ### Installing on Linux-based Systems
 The Terraform packages are signed using a private key controlled by HashiCorp, so in most situations the first step would be to configure your system to trust that HashiCorp key for package authentication. For example:
 
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+```curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -```
 After registering the key, you can add the official HashiCorp repository to your system:
 
-`sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"` 
+```sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"``` 
 
 The above command line uses the following sub-shell commands:
 
