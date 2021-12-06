@@ -7,6 +7,24 @@ Terraform is an infrastructure as code (IaC) tool that allows you to build, chan
   Source: https://www.terraform.io/intro/index.html
 
 ### Installing on Linux-based Systems
+The Terraform packages are signed using a private key controlled by HashiCorp, so in most situations the first step would be to configure your system to trust that HashiCorp key for package authentication. For example:
+
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+After registering the key, you can add the official HashiCorp repository to your system:
+
+`sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"` 
+
+The above command line uses the following sub-shell commands:
+
+dpkg --print-architecture to determine your system's primary APT architecture/ABI, such as amd64.
+lsb_release -cs to find the distribution release codename for your current system, such as buster, groovy, or sid.
+apt-add-repository usually automatically runs apt update as part of its work in order to fetch the new package indices, but if it does not then you will need to so manually before the packages will be available.
+
+To install Terraform from the new repository:
+
+`sudo apt install terraform`
+
+Source: https://www.terraform.io/docs/cli/install/apt.html
 
 ### Installing on Windows-based Systems
 If you want to deploy a Wownero Node using Terraform using these instructions - please install it following these instructions below. It includes installing Chocolatey as a package manager, and then installing Terraform. After this - we'll be able to deploy a Wownero Node on Digital Ocean using instuctions followed in other steps.
@@ -26,7 +44,7 @@ The easiest way to install Terraform on Windows 7/10/11 is through using the Cho
 7. Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
   Source: https://jcutrer.com/windows/install-chocolatey-choco-windows10
   
-#### Install Terraform
+##### Install Terraform
 Now that we have installed chocolatey - we can now install terraform which is a simple command to run in PowerShell.  Please make sure you run this as Administator and not as a regular user of the system before runing this!
 
 `choco install terraform`
