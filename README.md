@@ -39,7 +39,9 @@ The easiest way to install Terraform on Windows 7/10/11 is through using the Cho
 1. Click Start and type “powershell“
 2. Right-click Windows Powershell and choose “Run as Administrator“
 3. Paste the following command into Powershell and press enter. 
-  ```Set-ExecutionPolicy Bypass -Scope Process -Force; `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))````
+  ```
+  Set-ExecutionPolicy Bypass -Scope Process -Force; `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+  ```
 5. Answer Yes when prompted
 6. Close and reopen an elevated PowerShell window to start using choco
 7. Choco is now installed and can be used from a PowerShell prompt or a regular command prompt windows to install many different software packages. Whichever one you use, just make sure you run choco from an elevated powershell/command prompt window.
